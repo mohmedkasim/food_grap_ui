@@ -68,7 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
                 ContainerTopWeek(
                   title: "Party Cake",
                   stars: "5.0",
@@ -77,9 +76,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 40),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    'Popular',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Popular',
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      PopularCount()
+                    ],
                   ),
                 ),
                 ConstrainedBox(
@@ -105,9 +114,20 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class PopularItemList extends StatelessWidget {
-  const PopularItemList({
-    Key key,
-  }) : super(key: key);
+  final String title;
+  final String category;
+  final String price;
+  final String percent;
+  final String image;
+
+  const PopularItemList(
+      {Key key,
+      this.title,
+      this.category,
+      this.price,
+      this.percent,
+      this.image})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -119,21 +139,45 @@ class PopularItemList extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
                     'assets/images/cupcake_blueberr.jpg',
                     width: 130,
-                    height: 150,
+                    height: 180,
                     fit: BoxFit.fitHeight,
                   )),
-              Text('cake name'),
-              Text('price'),
+              SizedBox(height: 10),
+              Text(
+                title ?? 'cake name',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 2),
+              Text(
+                '${category ?? "category"} - ${price ?? "price"}',
+                style: TextStyle(color: Colors.grey[400]),
+              ),
+              SizedBox(
+                height: 7,
+              ),
               Row(
                 children: [
-                  Icon(FontAwesomeIcons.smile),
-                  Text('68%'),
+                  Icon(
+                    FontAwesomeIcons.smile,
+                    color: Colors.green[700],
+                    size: 15,
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    '${percent ?? "-"}%',
+                    style: TextStyle(
+                      color: Colors.green[700],
+                      fontSize: 15,
+                    ),
+                  ),
                 ],
               )
             ],
@@ -155,7 +199,7 @@ class ContainerTopWeek extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Stack(
         children: [
           Padding(
@@ -215,6 +259,27 @@ class ContainerTopWeek extends StatelessWidget {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class PopularCount extends StatelessWidget {
+  final String number;
+
+  const PopularCount({Key key, this.number}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: Colors.amber[200]),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          '16',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
