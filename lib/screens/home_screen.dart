@@ -45,7 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
-            ContainerTopWeek(),
+            ContainerTopWeek(
+              title: "Party Cake",
+              stars: "5.0",
+              image: 'assets/images/girl_party.png',
+            ),
             SizedBox(height: 40),
             Text(
               'Popular',
@@ -91,9 +95,12 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class ContainerTopWeek extends StatelessWidget {
-  const ContainerTopWeek({
-    Key key,
-  }) : super(key: key);
+  final String stars;
+  final String title;
+  final String image;
+
+  const ContainerTopWeek({Key key, this.stars, this.title, this.image})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +113,7 @@ class ContainerTopWeek extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.orange[300]),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -119,7 +126,7 @@ class ContainerTopWeek extends StatelessWidget {
                       SizedBox(
                         width: 5,
                       ),
-                      Text('5.0'),
+                      Text(stars),
                     ],
                   ),
                   SizedBox(height: 15),
@@ -129,8 +136,8 @@ class ContainerTopWeek extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'Party cake',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    title,
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 13),
                   CircleAvatar(
@@ -146,10 +153,10 @@ class ContainerTopWeek extends StatelessWidget {
           ),
         ),
         Positioned(
-          right: 20,
+          right: 40,
           bottom: 1,
           child: Image.asset(
-            'assets/images/girl_party.png',
+            image,
             width: MediaQuery.of(context).size.width / 4,
           ),
         )
