@@ -12,102 +12,110 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 8,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(FontAwesomeIcons.blog),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text('caketo'),
-                    ],
-                  ),
-                  Icon(FontAwesomeIcons.solidBell)
-                ],
+          body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.white, Colors.grey[100]])),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 8,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(
+                height: 10,
               ),
-            ),
-            SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Let\'s grab',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.orange[700]),
-                  ),
-                  Text(
-                    'Something 🍰',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(FontAwesomeIcons.blog),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text('caketo'),
+                      ],
+                    ),
+                    Icon(FontAwesomeIcons.solidBell)
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            ContainerTopWeek(
-              title: "Party Cake",
-              stars: "5.0",
-              image: 'assets/images/girl_party.png',
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Text(
-                'Popular',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              SizedBox(height: 50),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Let\'s grab',
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orange[700]),
+                    ),
+                    Text(
+                      'Something 🍰',
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Container(
-              height: 100,
-              padding: EdgeInsets.only(left: 20),
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  primary: false,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.blueAccent,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Image.asset(''),
-                              Text('cake name'),
-                              Text('price'),
-                              Row(
-                                children: [
-                                  Icon(FontAwesomeIcons.smile),
-                                  Text('68%'),
-                                ],
-                              )
-                            ],
+              SizedBox(height: 20),
+              ContainerTopWeek(
+                title: "Party Cake",
+                stars: "5.0",
+                image: 'assets/images/girl_party.png',
+              ),
+              SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Text(
+                  'Popular',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                height: 100,
+                padding: EdgeInsets.only(left: 20),
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    primary: false,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          color: Colors.blueAccent,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset(''),
+                                Text('cake name'),
+                                Text('price'),
+                                Row(
+                                  children: [
+                                    Icon(FontAwesomeIcons.smile),
+                                    Text('68%'),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }),
-            )
-          ],
+                      );
+                    }),
+              )
+            ],
+          ),
         ),
       )),
     );
