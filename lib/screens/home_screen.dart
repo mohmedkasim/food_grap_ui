@@ -13,36 +13,52 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
           body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+        padding: const EdgeInsets.symmetric(
+          vertical: 8,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
               height: 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Icon(FontAwesomeIcons.blog),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text('caketo'),
-                  ],
-                ),
-                Icon(FontAwesomeIcons.solidBell)
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(FontAwesomeIcons.blog),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text('caketo'),
+                    ],
+                  ),
+                  Icon(FontAwesomeIcons.solidBell)
+                ],
+              ),
             ),
-            SizedBox(height: 30),
-            Text(
-              'Let\'s grab',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              ' Something 🍰',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            SizedBox(height: 50),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Let\'s grab',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange[700]),
+                  ),
+                  Text(
+                    'Something 🍰',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 20),
             ContainerTopWeek(
@@ -51,12 +67,16 @@ class _HomeScreenState extends State<HomeScreen> {
               image: 'assets/images/girl_party.png',
             ),
             SizedBox(height: 40),
-            Text(
-              'Popular',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Text(
+                'Popular',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
             ),
             Container(
               height: 100,
+              padding: EdgeInsets.only(left: 20),
               child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -104,63 +124,68 @@ class ContainerTopWeek extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 30.0),
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.orange[300]),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        size: 10,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(stars),
-                    ],
-                  ),
-                  SizedBox(height: 15),
-                  Text(
-                    'Top of the week',
-                    style: TextStyle(fontSize: 10),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    title,
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 13),
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.arrow_forward,
-                      color: Colors.black,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.orange[300]),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.solidStar,
+                          size: 10,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(stars),
+                      ],
                     ),
-                  )
-                ],
+                    SizedBox(height: 15),
+                    Text(
+                      'Top of the week',
+                      style: TextStyle(fontSize: 10),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      title,
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 13),
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.arrow_forward,
+                        color: Colors.black,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        Positioned(
-          right: 40,
-          bottom: 1,
-          child: Image.asset(
-            image,
-            width: MediaQuery.of(context).size.width / 4,
-          ),
-        )
-      ],
+          Positioned(
+            right: 40,
+            bottom: 1,
+            child: Image.asset(
+              image,
+              width: MediaQuery.of(context).size.width / 4,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
