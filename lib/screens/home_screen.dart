@@ -48,7 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    Icon(FontAwesomeIcons.solidBell)
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.asset(
+                        'assets/images/user.jpg',
+                        width: 50,
+                      ),
+                    )
                   ],
                 ),
               ),
