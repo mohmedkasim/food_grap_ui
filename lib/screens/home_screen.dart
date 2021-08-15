@@ -41,14 +41,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text('caketo'),
+                        Text(
+                          'Caketo',
+                          style:
+                              TextStyle(fontFamily: "pacifico", fontSize: 20),
+                        ),
                       ],
                     ),
                     Icon(FontAwesomeIcons.solidBell)
                   ],
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 40),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
