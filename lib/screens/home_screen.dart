@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../ExampleData.dart';
+
 class HomeScreen extends StatefulWidget {
   static const String id = "home_screen";
   @override
@@ -110,9 +112,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     primary: false,
-                    itemCount: 5,
+                    itemCount: foodData.length,
                     itemBuilder: (context, index) {
-                      return PopularItemList();
+                      return PopularItemList(
+                        title: foodData[index].title,
+                        image: foodData[index].image,
+                        percent: foodData[index].percent,
+                        category: foodData[index].category,
+                        price: foodData[index].price,
+                      );
                     }),
               )
             ],
@@ -155,7 +163,7 @@ class PopularItemList extends StatelessWidget {
               ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
-                    'assets/images/cupcake_blueberr.jpg',
+                    image,
                     width: 130,
                     height: 180,
                     fit: BoxFit.fitHeight,
@@ -166,9 +174,18 @@ class PopularItemList extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 2),
-              Text(
-                '${category ?? "category"} - ${price ?? "price"}',
-                style: TextStyle(color: Colors.grey[400]),
+              Row(
+                children: [
+                  Text(
+                    '${category ?? "category"} - ${price ?? "price"}',
+                    style: TextStyle(color: Colors.grey[400]),
+                  ),
+                  Icon(
+                    FontAwesomeIcons.dollarSign,
+                    size: 10,
+                    color: Colors.grey[400],
+                  )
+                ],
               ),
               SizedBox(
                 height: 7,
