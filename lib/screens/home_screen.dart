@@ -10,105 +10,105 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.white, Colors.grey[100]])),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 8,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(
-                  height: 10,
+    return SingleChildScrollView(
+      child: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.white, Color.fromRGBO(238, 240, 244, 1)])),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 8,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/logo_cupcake.png',
+                          width: 30,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text('caketo'),
+                      ],
+                    ),
+                    Icon(FontAwesomeIcons.solidBell)
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(FontAwesomeIcons.blog),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text('caketo'),
-                        ],
-                      ),
-                      Icon(FontAwesomeIcons.solidBell)
-                    ],
-                  ),
+              ),
+              SizedBox(height: 50),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Let\'s grab',
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orange[700]),
+                    ),
+                    Text(
+                      'Something 🍰',
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 50),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Let\'s grab',
-                        style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.orange[700]),
-                      ),
-                      Text(
-                        'Something 🍰',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
+              ),
+              ContainerTopWeek(
+                title: "Party Cake",
+                stars: "5.0",
+                image: 'assets/images/girl_party.png',
+              ),
+              SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Popular',
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    PopularCount()
+                  ],
                 ),
-                ContainerTopWeek(
-                  title: "Party Cake",
-                  stars: "5.0",
-                  image: 'assets/images/girl_party.png',
+              ),
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: 300,
                 ),
-                SizedBox(height: 40),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Popular',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      PopularCount()
-                    ],
-                  ),
-                ),
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: 300,
-                  ),
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      primary: false,
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return PopularItemList();
-                      }),
-                )
-              ],
-            ),
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    primary: false,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return PopularItemList();
+                    }),
+              )
+            ],
           ),
         ),
-      )),
+      ),
     );
   }
 }
