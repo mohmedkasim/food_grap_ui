@@ -5,6 +5,7 @@ import 'package:food_grab/Components/popular_item.dart';
 import 'package:food_grab/Components/rounded_container.dart';
 import 'package:food_grab/Components/top_week_container.dart';
 import 'package:food_grab/Components/user_account_container.dart';
+import 'package:food_grab/constents.dart';
 import 'package:food_grab/screens/order_screen.dart';
 
 import '../ExampleData.dart';
@@ -24,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.white, Color.fromRGBO(238, 240, 244, 1)])),
+                colors: [Colors.white, secondaryColor])),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             vertical: 8,
