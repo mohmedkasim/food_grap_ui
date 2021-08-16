@@ -89,24 +89,3 @@ class PopularItemList extends StatelessWidget {
     );
   }
 }
-
-class PopularCount extends StatelessWidget {
-  final String number;
-
-  const PopularCount({Key key, this.number}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Colors.amber[200]),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          number,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-  }
-}

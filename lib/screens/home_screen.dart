@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food_grab/Components/logo_container.dart';
 import 'package:food_grab/Components/popular_item.dart';
+import 'package:food_grab/Components/rounded_container.dart';
 import 'package:food_grab/Components/top_week_container.dart';
 import 'package:food_grab/screens/order_screen.dart';
 
@@ -89,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       width: 20,
                     ),
-                    PopularCount(number: foodData.length.toString())
+                    RoundedContainer(number: foodData.length.toString())
                   ],
                 ),
               ),
