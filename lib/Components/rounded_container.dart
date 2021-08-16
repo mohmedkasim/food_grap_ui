@@ -11,7 +11,7 @@ class RoundedContainer extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: Colors.amber[200]),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15.0),
         child: Text(
           number,
           style: TextStyle(fontWeight: FontWeight.bold),
