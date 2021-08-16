@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food_grab/Components/logo_container.dart';
 import 'package:food_grab/Components/rounded_container.dart';
@@ -32,7 +33,13 @@ class _OrderScreenState extends State<OrderScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        LogoContainer(),
+                        // LogoContainer(),
+                        GestureDetector(
+                          onTap: () => Navigator.pop(context),
+                          child: CircleAvatar(
+                            child: Icon(Icons.arrow_back_outlined),
+                          ),
+                        ),
                         SizedBox(height: 40),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,10 +50,19 @@ class _OrderScreenState extends State<OrderScreen> {
                                   fontSize: 30, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 4),
-                            Text(
-                              "order",
-                              style: TextStyle(
-                                  fontSize: 25, fontWeight: FontWeight.bold),
+                            Row(
+                              children: [
+                                Text(
+                                  "order",
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Image.asset(
+                                  'assets/images/logo_cupcake.png',
+                                  width: 40,
+                                )
+                              ],
                             ),
                           ],
                         ),
@@ -64,13 +80,13 @@ class _OrderScreenState extends State<OrderScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Pad Thai",
+                                  "Cupcake Choc",
                                   style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  "Thai mcdonald",
+                                  "Mcdonald",
                                   style: TextStyle(color: Colors.grey),
                                 ),
                                 SizedBox(
@@ -164,6 +180,154 @@ class _OrderScreenState extends State<OrderScreen> {
                     ))
               ],
             ),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: secondaryColor),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 35, horizontal: 35),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.my_location,
+                            color: Colors.grey,
+                          ),
+                          SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Ana House, London",
+                                  style: TextStyle(
+                                      color: Colors.brown,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text("Place of delivery")
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 30),
+                      Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(
+                              FontAwesomeIcons.clock,
+                              color: Colors.grey,
+                            ),
+                            SizedBox(width: 10),
+                            Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '10-15 min',
+                                    style: TextStyle(
+                                        color: Colors.brown,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text('Delivery time')
+                                ])
+                          ]),
+                      SizedBox(height: 20),
+                      Divider(
+                        color: Colors.grey,
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Image.asset(
+                                  'assets/images/delivery.jpg',
+                                  width: 70,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Richhard Ray',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18)),
+                                  SizedBox(height: 5),
+                                  Text('Food Delivery',
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 12))
+                                ],
+                              ),
+                            ],
+                          ),
+                          CircleAvatar(
+                            backgroundColor: Colors.white,
+                            child: Icon(
+                              Icons.arrow_forward,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.orangeAccent),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30.0),
+                        child: Text(
+                          "Confirm Order",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.orange[200]),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Icon(
+                            Icons.credit_card,
+                            size: 30,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       )),
