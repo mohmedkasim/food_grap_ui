@@ -4,6 +4,7 @@ import 'package:food_grab/Components/logo_container.dart';
 import 'package:food_grab/Components/popular_item.dart';
 import 'package:food_grab/Components/rounded_container.dart';
 import 'package:food_grab/Components/top_week_container.dart';
+import 'package:food_grab/Components/user_account_container.dart';
 import 'package:food_grab/screens/order_screen.dart';
 
 import '../ExampleData.dart';
@@ -38,16 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    LogoContainer(),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: Image.asset(
-                        'assets/images/user.jpg',
-                        width: 50,
-                      ),
-                    )
-                  ],
+                  children: [LogoContainer(), UserContainer()],
                 ),
               ),
               SizedBox(height: 40),
