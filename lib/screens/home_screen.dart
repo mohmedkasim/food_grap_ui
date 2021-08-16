@@ -78,18 +78,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text(
                       'Popular',
                       style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
                     ),
                     SizedBox(
                       width: 20,
                     ),
-                    RoundedContainer(number: foodData.length.toString())
+                    RoundedContainer(
+                      number: foodData.length.toString(),
+                      width: 15,
+                      height: 10,
+                    )
                   ],
                 ),
               ),
+              SizedBox(height: 10),
               ConstrainedBox(
                 constraints: BoxConstraints(
-                  maxHeight: 300,
+                  maxHeight: 320,
                 ),
                 child: ListView.builder(
                     shrinkWrap: true,

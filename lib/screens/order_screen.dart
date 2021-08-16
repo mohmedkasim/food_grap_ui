@@ -72,6 +72,8 @@ class _OrderScreenState extends State<OrderScreen> {
                           children: [
                             RoundedContainer(
                               number: "2x",
+                              height: 15.0,
+                              width: 15.0,
                             ),
                             SizedBox(
                               width: 10,

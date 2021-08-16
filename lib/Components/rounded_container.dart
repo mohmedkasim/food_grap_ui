@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class RoundedContainer extends StatelessWidget {
   final String number;
-
-  const RoundedContainer({Key key, this.number}) : super(key: key);
+  final double width, height;
+  const RoundedContainer({Key key, this.number, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class RoundedContainer extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: Colors.amber[200]),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15.0),
+        padding: EdgeInsets.symmetric(horizontal: width, vertical: height),
         child: Text(
           number,
           style: TextStyle(fontWeight: FontWeight.bold),
