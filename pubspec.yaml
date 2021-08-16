@@ -34,3 +34,8 @@ flutter:
        fonts:
          - asset: assets/fonts/Pacifico-Regular.ttf
 
+     - family: poppins
+       fonts:
+         - asset: assets/fonts/Poppins-Regular.ttf
+         - asset: assets/fonts/Poppins-Black.ttf
+           weight: 700
