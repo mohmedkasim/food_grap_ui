@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:food_grab/Components/logo_container.dart';
 import 'package:food_grab/Components/popular_item.dart';
 import 'package:food_grab/Components/top_week_container.dart';
+import 'package:food_grab/screens/order_screen.dart';
 
 import '../ExampleData.dart';
 
@@ -36,22 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/logo_cupcake.png',
-                          width: 30,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          'Caketo',
-                          style:
-                              TextStyle(fontFamily: "pacifico", fontSize: 20),
-                        ),
-                      ],
-                    ),
+                    LogoContainer(),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: Image.asset(
@@ -122,6 +109,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         percent: foodData[index].percent,
                         category: foodData[index].category,
                         price: foodData[index].price,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => OrderScreen()));
+                        },
                       );
                     }),
               )
