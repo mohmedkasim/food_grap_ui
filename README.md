@@ -23,7 +23,7 @@ this flutter project contains files:
 1. Model/Class food
 2. Components:
   - first screen:
-  ```
+    ```
     - logo Container
     - popular item (single list item)
     - top week container
@@ -31,7 +31,7 @@ this flutter project contains files:
     - user account container (user app picture)
     ```
   - second screen:
-  ```
+    ```
     - order Button (confirm button)
     - order pricing (contains amount of item with price)
     - order status (contains user container, current progress and last order)
