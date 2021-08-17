@@ -46,12 +46,8 @@ this flutter project contains files:
 
 ### First Screen
 
-img[src*="#testing"]{
-    border-radius: 30px;
-}
 
-![Testing](/assets/images/screenshots/screen1_1.png#testing)
-
+<a href="url"><img src="/assets/images/screenshots/screen1_1.png" width="350" /></a>
 <a href="url"><img src="/assets/images/screenshots/screen1_2.png" width="355" /></a>
 
 ### Second Screen
