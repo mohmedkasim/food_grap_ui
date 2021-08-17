@@ -52,8 +52,8 @@ this flutter project contains files:
 
 ### Second Screen
 
-<img src="/assets/images/screenshots/screen2_1.png" width="350" />
-<img src="/assets/images/screenshots/screen2_2.png" width="350" />
+<a href="url"><img src="/assets/images/screenshots/screen2_1.png" width="350" /></a>
+<a href="url"><img src="/assets/images/screenshots/screen2_2.png" width="350" /></a>
 
 
 ## Flutter help
