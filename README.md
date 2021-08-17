@@ -47,9 +47,7 @@ this flutter project contains files:
 ### First Screen
 
 
-<span style="padding:10px; border-radius:30px">
-  ![](/assets/images/screenshots/screen1_1.png)
-</span>
+<a href="url"><img src="/assets/images/screenshots/screen1_1.png" height="auto" width="200" style="border-radius:50%"></a>
 <img src="/assets/images/screenshots/screen1_1.png" width="350" style="padding:10px; border-radius:30px"/>
 
 <img src="/assets/images/screenshots/screen1_2.png" width="350" style="padding:8px; border-radius:30px"/>
