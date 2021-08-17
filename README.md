@@ -47,13 +47,12 @@ this flutter project contains files:
 ### First Screen
 
 
-<a href="url"><img src="/assets/images/screenshots/screen1_1.png" width="250" /></a>
-<a href="url"><img src="/assets/images/screenshots/screen1_2.png" width="250" /></a>
+<a href="url"><img src="/assets/images/screenshots/screen1_1.png" width="350" /></a>
+<a href="url"><img src="/assets/images/screenshots/screen1_2.png" width="350" /></a>
 
 ### Second Screen
 
 <img src="/assets/images/screenshots/screen2_1.png" width="350" />
-
 <img src="/assets/images/screenshots/screen2_2.png" width="350" />
 
 
