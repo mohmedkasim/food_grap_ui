@@ -1,5 +1,5 @@
 # Food Grab App
-Hello dear reader, I introduce you a free work for free use. I developed this app for practice purpose, keep follow me for more in future. keep up developing 🥰 and please read this context.  
+Hello dear reader, I introduce you a free work for free use. I developed this app for practice purpose, keep following me for more in future. keep up developing 🥰 and please read this document.  
 
 Designed by Martyna Zielińska, Design reference [<img src="https://img.shields.io/badge/dribbble-Here-red"/>](https://dribbble.com/shots/9555382-Food-Delivery)
 
@@ -17,7 +17,7 @@ My work its about Caketo which is for cake/sweet shopping delivery and only cont
 git clone https://github.com/mohmedkasim/food_grap_ui
  ```
 
-## what is contains?
+## what is contain?
 
 this flutter project contains files:
 1. Model/Class food
@@ -48,7 +48,7 @@ this flutter project contains files:
 
 
 <a href="url"><img src="/assets/images/screenshots/screen1_1.png" width="350" /></a>
-<a href="url"><img src="/assets/images/screenshots/screen1_2.png" width="350" /></a>
+<a href="url"><img src="/assets/images/screenshots/screen1_2.png" width="360" /></a>
 
 ### Second Screen
 
@@ -66,3 +66,8 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## I am Here
+
+please follow me for more, and share this work with your friends, I will be happy.
+you can give me some design ideas to do it for public!! find me here mk4957454@gmail.com
