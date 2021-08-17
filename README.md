@@ -46,12 +46,10 @@ this flutter project contains files:
 
 ### First Screen
 
-<style>
-img {
-  border-radius:30px;
-  padding:10px;
-}
-</style>
+.styling img {border-radius: 30px}
+<span class="styling">
+  ![](/assets/images/screenshots/screen1_1.png)
+</span>
 <img src="/assets/images/screenshots/screen1_1.png" width="350" style="padding:10px; border-radius:30px"/>
 
 <img src="/assets/images/screenshots/screen1_2.png" width="350" style="padding:8px; border-radius:30px"/>
